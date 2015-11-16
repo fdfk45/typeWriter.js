@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoad", $, false);
+document.addEventListener("DOMContentLoad", typeWriter, false);
 
-var $ = function (selector, type, interval) {
+var typeWriter = function (selector, type, interval) {
     
     "use strict";
     
@@ -18,7 +18,7 @@ var $ = function (selector, type, interval) {
         clear;
     
         
-    for (i; i < len; i++) {
+    for (; i < len; i++) {
         
         list.push(el[i]); // Pushing the element in the list array
     }
@@ -32,6 +32,8 @@ var $ = function (selector, type, interval) {
             style     = document.createElement("style");
             document.head.appendChild(style);
         
+        
+        //Setting the default interval to 100 when interval is not set by the user
         if (typeof interval === "undefined") {
             
             interval = 100;
